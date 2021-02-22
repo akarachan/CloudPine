@@ -1,0 +1,36 @@
+[data-items-count]:not([data-items-count="0"]) {
+	--content: attr(data-items-count);	
+}
+
+[data-items-count] {
+	position: relative;
+
+	&:before {
+		position: absolute;
+		z-index: 1;
+		content: var(--content);
+		top: -9px;
+		right: -9px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		min-width: 16px;
+		cursor: pointer;
+		height: 16px;
+		padding: 0 3px;
+		font-size: 10px;
+		font-weight: 600;
+		font-style: normal;
+		border-radius: 10px;
+		color: var(--cartBadgeText, #fff);
+		background: var(--cartBadgeBackground, var(--paletteColor1));
+	}
+
+	&.ct-added:before {
+		animation: 0.6s ease-in-out 0.12s normal both 1 bounce-in;
+	}
+
+	&[data-skip-badge]:before {
+		display: none;
+	}
+}

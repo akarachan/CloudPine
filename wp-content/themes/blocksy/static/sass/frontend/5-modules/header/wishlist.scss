@@ -1,0 +1,13 @@
+.ct-header-wishlist {
+	display: flex;
+	align-items: center;
+
+	.ct-label {
+		margin-right: 8px;
+		line-height: normal;
+	}
+
+	&:hover {
+		--icon-color: var(--icon-hover-color, var(--paletteColor2));
+	}
+}
